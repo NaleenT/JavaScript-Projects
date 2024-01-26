@@ -7,3 +7,6 @@ Contains a small project containing the above items.
 
 Project2_functions:
 Has the basics of how to write and call a function
+
+Project_math_operators:
+This project contains the basic Javascript math operators
