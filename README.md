@@ -10,3 +10,6 @@ Has the basics of how to write and call a function
 
 Project_math_operators:
 This project contains the basic Javascript math operators
+
+Project4_dictonary:
+Has the basics of how to create a dictonary
