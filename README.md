@@ -4,3 +4,6 @@ Contains the basics of Java script how to use window.alert(), document.write(), 
 
 Index2.html:
 Contains a small project containing the above items. 
+
+Project2_functions:
+Has the basics of how to write and call a function
