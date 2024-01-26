@@ -13,3 +13,6 @@ This project contains the basic Javascript math operators
 
 Project4_dictonary:
 Has the basics of how to create a dictonary
+
+Project5_comparisons_type_coercion:
+Contains Boolean operators and comparsion
