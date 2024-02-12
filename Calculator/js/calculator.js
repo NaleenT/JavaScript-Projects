@@ -22,9 +22,10 @@ function Input_Digit(digit) {
         //This overwrites the Display_value if the current value is 0
         Calculator.Display_Value = Display_Value === '0' ? digit : Display_Value + digit;
     }
+}
 
 //This section handles decimal points
-function Input_Digit(dot) {
+function Input_Decimal(dot) {
     //Ensures that accidental clicking of decimal point doesnt cause bugs
     if (Calculator.Wait_Second_Operand === true) return;
     if (!Calculator.Display_Value.includes(dot)) {
@@ -69,7 +70,7 @@ const Perform_Calculation = {
     '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
     '=': (First_Operand, Second_Operand) => Second_Operand
     };
-}
+
 
 function Calculator_Reset() {
     Calculator.Display_Value = '0';
@@ -92,19 +93,19 @@ keys.addEventListener('click', (event) => {
     if (!target.matches('button')) {
         return;
     }
-    if (target.classlist.contains('operator')){
+    if (target.classList.contains('operator')){
         Handle_Operator(target.value);
         Update_Display();
         return;
     }
-    if (target.classlist.contains('decimal')) {
+    if (target.classList.contains('decimal')) {
         Input_Digit(target.value);
         Update_Display();
         return
     }
 
     //Ensures that AC clears all inputs
-    if (target.classlist.contains('all-clear')) {
+    if (target.classList.contains('all-clear')) {
         Calculator_Reset();
         Update_Display();
         return;
