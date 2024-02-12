@@ -86,7 +86,6 @@ function checkWinConditions() {
     else if (arrayIncludes('6O', '4O', '2O')) { drawWinLine(100, 508, 510, 90)}
     else if (arrayIncludes('0O', '4O', '8O')) { drawWinLine(100, 100, 520, 520)}
 
-    else if (arrayIncludes('0O', '4O', '8O')) {drawWinLine(100, 100, 520, 520)}
 
     else if (selectedSquares.length >= 9) {
         audio('./media/tie.mp3');
@@ -113,13 +112,13 @@ function audio(audioURL) {
 }
 
 //This function utilizes HTML canvas to draw win lines
-function drawWinLine(coordX1, coordX2, coordX3) {
+function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
     const canvas = document.getElementById('win-lines');
     const c = canvas.getContext('2d');
     //This line indicates where the start of a lines x axis
     let x1 = coordX1,
         y1 = coordY1,
-        x3 = coordX2,
+        x2 = coordX2,
         y2 = coordY2,
         x = x1,
         y = y1;
@@ -139,7 +138,7 @@ function drawWinLine(coordX1, coordX2, coordX3) {
         if (x1 <= x2 && y1 <= y2) {
             if (x < x2) {x += 10;}
             if (y < y2) {y += 10;}
-            if (x >= x2 && y <= y2) {cancelAnimationFrame(animationLoop);}
+            if (x >= x2 && y >= y2) {cancelAnimationFrame(animationLoop);}
         }
 
         if (x1 <= x2 && y1 >= y2) {
@@ -167,7 +166,7 @@ setTimeout(function() {clear(); resetGame();}, 1000);
 function resetGame() {
     for (let i = 0; i < 9; i++) {
         let square = document.getElementById(String(i));
-        square.style.backgroundimage = '';
+        square.style.backgroundImage = '';
     }
     selectedSquares = [];
 }
